@@ -1,3 +1,5 @@
+/* eslint-disable react/prop-types */
+// @ts-nocheck
 function TodoItem({ task, deleteTask, toggleCompleted}) {
     function handleChange() {
         toggleCompleted(task.id);
