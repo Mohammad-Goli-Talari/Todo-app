@@ -21,7 +21,7 @@ function TodoList() {
             id: Date.now(),
             text,
             completed: false,
-        };
+        }.trim();
         setTasks([...tasks, newTask]);
         setText("");
     }
@@ -44,7 +44,7 @@ function TodoList() {
         <div className="todo-list">
             {tasks.map(task => (<TodoItem key={task.id} task={task} deleteTask={deleteTask} toggleCompleted={toggleCompleted} />
         ))}
-        <input value={text} onChange={e => setText(e.target.value)} />
+        <input placeholder="Please add your new task..." value={text} onChange={e => setText(e.target.value)} />
         <button onClick={() => addTask(text)}>Add</button>
         </div>
     );
